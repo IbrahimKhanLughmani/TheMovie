@@ -194,6 +194,7 @@ const TicketDetailScreen = ({navigation, route}) => {
 const style = StyleSheet.create({
     main: {
       flex: 1,
+      backgroundColor: colors.both
     },
     Row: {
         flexDirection: 'row'

@@ -36,7 +36,6 @@ const HomeScreen = ({navigation}) => {
             {/* screen body */}
             <View style={style.screen}>
                 <FlatList 
-                    style={{marginBottom: 60}}
                     showsVerticalScrollIndicator={false}
                     ListEmptyComponent={<EmptyList msg={'Loading...'} />}
                     data={movies}
@@ -76,7 +75,7 @@ const style = StyleSheet.create({
         borderColor: colors.silver
     },
     flatlist: {
-        paddingBottom: 20
+        paddingBottom: 80
     },
     itemContainer: {
         alignItems: 'center', 

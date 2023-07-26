@@ -52,9 +52,9 @@ export default ScreenHeader = ({goBack, search, setSearch, setMovies, showSearch
                     <Image style={style.backIcon} source={require('../assets/back.png')} />
                 </TouchableOpacity>
                 <View style={[style.mainContainer, results ? {marginStart: 10} : {alignItems: 'center'}]}>
-                    {title ? <Text style={style.searchText}>{title}</Text> : null}
-                    {release ? <Text style={style.searchDesc}>{release}</Text> : null}
-                    {results ? <Text style={style.searchText}>{results}</Text> : null}
+                    {title ? <Text numberOfLines={1} style={style.searchText}>{title}</Text> : null}
+                    {release ? <Text numberOfLines={1} style={style.searchDesc}>{release}</Text> : null}
+                    {results ? <Text numberOfLines={1} style={style.searchText}>{results}</Text> : null}
                 </View>
                 <View style={style.searchIconContainer}/>
             </View> :
@@ -105,6 +105,7 @@ const style = StyleSheet.create({
         width: 32,
         justifyContent: 'center',
         alignItems: 'center',
+        marginEnd: 20
     },
     searchIcon: {
         height: 18, 

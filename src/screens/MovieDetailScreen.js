@@ -108,7 +108,8 @@ const style = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row',
-        marginStart: 20
+        marginStart: 20,
+        marginTop: 10,
     },
     backIcon: {
         height: 28, 

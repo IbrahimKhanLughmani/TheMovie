@@ -90,6 +90,7 @@ const TicketScreen = ({navigation, route}) => {
 const style = StyleSheet.create({
     main: {
       flex: 1,
+      backgroundColor: colors.both
     },
     screen: {
         flex: 1, 
@@ -121,7 +122,7 @@ const style = StyleSheet.create({
         position: 'absolute', 
         justifyContent: 'center', 
         alignSelf: 'center', 
-        bottom: 20
+        bottom: 30
     },
     ticketButton: {
         height: 55, 

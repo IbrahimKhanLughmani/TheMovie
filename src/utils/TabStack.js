@@ -1,5 +1,5 @@
-import React, {useContext, useEffect} from 'react';
-import { View, Image, StyleSheet, Text } from 'react-native';
+import React from 'react';
+import { Image, SafeAreaView } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
@@ -29,54 +29,56 @@ export const TabStack = () => {
   const activeTabSize = 25
 
   return(
-    <Tab.Navigator
-      initialRouteName="WatchStack"
-      screenOptions={() => ({
-        headerShown: false,
-        tabBarShowLabel: true,
-        tabBarStyle: { 
-          backgroundColor: colors.purple,
-          height: 60,
-          borderTopStartRadius: 20,
-          borderTopEndRadius: 20,
-          paddingBottom: 10,
-          borderTopWidth: 0,
-          position: 'absolute',
-        },
-        tabBarLabelStyle: {color: colors.lightPurple},
-      })}>
-      <Tab.Screen 
-        name="DashScreen" 
-        component={DashScreen} 
-        options={{
-          tabBarLabel: 'Dashboard',
-          tabBarIcon: ({focused}) => ( focused ? <Image source={require("../assets/dash-2.png")} style={{width: activeTabSize, height: activeTabSize, marginTop: 10}} /> : <Image source={require("../assets/dash.png")} style={{width: tabSize, height: tabSize, marginTop: 10}} /> ),
-        }}
-      />
-      <Tab.Screen 
-        name="WatchStack" 
-        component={WatchStack} 
-        options={{
-          tabBarLabel: 'Watch',
-          tabBarIcon: ({focused}) => ( focused ? <Image source={require("../assets/home.png")} style={{width: activeTabSize, height: activeTabSize, marginTop: 10}} /> : <Image source={require("../assets/home-2.png")} style={{width: tabSize, height: tabSize, marginTop: 10}} /> ),
-        }}
-      />
-      <Tab.Screen 
-        name="MediaScreen" 
-        component={MediaScreen} 
-        options={{
-          tabBarLabel: 'Media Library',
-          tabBarIcon: ({focused}) => ( focused ? <Image source={require("../assets/folder.png")} style={{width: activeTabSize, height: activeTabSize, marginTop: 10}} /> : <Image source={require("../assets/folder-2.png")} style={{width: tabSize, height: tabSize, marginTop: 10}} /> ),
-        }}
-      />
-      <Tab.Screen 
-        name="MoreScreen" 
-        component={MoreScreen} 
-        options={{
-          tabBarLabel: 'More',
-          tabBarIcon: ({focused}) => ( focused ? <Image source={require("../assets/list-2.png")} style={{width: activeTabSize, height: activeTabSize, marginTop: 10}} /> : <Image source={require("../assets/list.png")} style={{width: tabSize, height: tabSize, marginTop: 10}} /> ),
-        }}
-      />
-    </Tab.Navigator>
+    <SafeAreaView style={{flex: 1, backgroundColor: colors.purple}}>
+      <Tab.Navigator
+        initialRouteName="WatchStack"
+        screenOptions={() => ({
+          headerShown: false,
+          tabBarShowLabel: true,
+          tabBarStyle: { 
+            backgroundColor: colors.purple,
+            height: 60,
+            borderTopStartRadius: 20,
+            borderTopEndRadius: 20,
+            paddingBottom: 10,
+            borderTopWidth: 0,
+            position: 'absolute',
+          },
+          tabBarLabelStyle: {color: colors.lightPurple},
+        })}>
+        <Tab.Screen 
+          name="DashScreen" 
+          component={DashScreen} 
+          options={{
+            tabBarLabel: 'Dashboard',
+            tabBarIcon: ({focused}) => ( focused ? <Image source={require("../assets/dash-2.png")} style={{width: activeTabSize, height: activeTabSize, marginTop: 10}} /> : <Image source={require("../assets/dash.png")} style={{width: tabSize, height: tabSize, marginTop: 10}} /> ),
+          }}
+        />
+        <Tab.Screen 
+          name="WatchStack" 
+          component={WatchStack} 
+          options={{
+            tabBarLabel: 'Watch',
+            tabBarIcon: ({focused}) => ( focused ? <Image source={require("../assets/home.png")} style={{width: activeTabSize, height: activeTabSize, marginTop: 10}} /> : <Image source={require("../assets/home-2.png")} style={{width: tabSize, height: tabSize, marginTop: 10}} /> ),
+          }}
+        />
+        <Tab.Screen 
+          name="MediaScreen" 
+          component={MediaScreen} 
+          options={{
+            tabBarLabel: 'Media Library',
+            tabBarIcon: ({focused}) => ( focused ? <Image source={require("../assets/folder.png")} style={{width: activeTabSize, height: activeTabSize, marginTop: 10}} /> : <Image source={require("../assets/folder-2.png")} style={{width: tabSize, height: tabSize, marginTop: 10}} /> ),
+          }}
+        />
+        <Tab.Screen 
+          name="MoreScreen" 
+          component={MoreScreen} 
+          options={{
+            tabBarLabel: 'More',
+            tabBarIcon: ({focused}) => ( focused ? <Image source={require("../assets/list-2.png")} style={{width: activeTabSize, height: activeTabSize, marginTop: 10}} /> : <Image source={require("../assets/list.png")} style={{width: tabSize, height: tabSize, marginTop: 10}} /> ),
+          }}
+        />
+      </Tab.Navigator>
+    </SafeAreaView>
   )
 };
