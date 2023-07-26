@@ -52,7 +52,7 @@ const style = StyleSheet.create({
     height: 32, 
     width: 32,
     position: 'absolute',
-    top: 37,
+    top: 47,
     left: 24
 },
   backIcon: {
