@@ -1,6 +1,6 @@
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
-import {StyleSheet, SafeAreaView, View, Text, TouchableOpacity, Dimensions, Image, BackHandler, Alert} from 'react-native';
+import {StyleSheet, SafeAreaView, View, Text, TouchableOpacity, Dimensions, Image, Alert} from 'react-native';
 import ScreenHeader from '../components/ScreenHeader';
 import strings from '../../theme/strings';
 import colors from '../../theme/colors';
