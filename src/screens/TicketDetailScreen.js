@@ -15,23 +15,17 @@ const TicketDetailScreen = ({navigation, route}) => {
     const [seat, setSeat] = useState({row: 0, seat: 0})
 
     useEffect(() => {
-        let backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
-            return true
-        })
-    
-        return () => {
-          backHandler.remove()
+        // remove previous seat
+        if(prevSeat.seat != null){
+            seating[prevSeat.rowsIndex][prevSeat.rowIndex][prevSeat.seatIndex] = prevSeat.seat
         }
-    }, [])
+    }, [prevSeat])
 
     return(
         <SafeAreaView style={style.main}>
             <ScreenHeader 
                 goBack={() => {
                     navigation.pop()
-                    if(prevSeat.seat != null){
-                        seating[prevSeat.rowsIndex][prevSeat.rowIndex][prevSeat.seatIndex] = prevSeat.seat
-                    }
                 }} 
                 title={route.params.title} 
                 release={`${selectedDate} | ${selectedHall.time} ${selectedHall.name}`} 
@@ -54,10 +48,6 @@ const TicketDetailScreen = ({navigation, route}) => {
                                             <TouchableOpacity 
                                                 key={seatIndex} 
                                                 onPress={() => {
-                                                    // remove previous seat
-                                                    if(prevSeat.seat != null){
-                                                        seating[prevSeat.rowsIndex][prevSeat.rowIndex][prevSeat.seatIndex] = prevSeat.seat
-                                                    }
                                                     // setting previous seat
                                                     setPrevSeat({rowsIndex, rowIndex, seatIndex, seat})
                                                     // adding new seat

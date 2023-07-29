@@ -14,7 +14,7 @@ export default strings = {
     bonus: "bonus",
     currency: "$",
     date: "Date",
-    selectSeat: "Please select cinetech hall",
+    selectSeat: "Please select a hall",
     pay: "Proceed to pay",
     price: "Total price",
     rows: "row",
@@ -25,5 +25,4 @@ export default strings = {
     accept: "Accept",
     reject: "Reject",
     confirm: "Confirm",
-    selectSeat: "Please select a seat",
 }
