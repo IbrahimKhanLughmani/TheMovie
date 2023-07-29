@@ -129,19 +129,19 @@ const TicketDetailScreen = ({navigation, route}) => {
                         </View>
                     </View>
                     <View style={style.rowContainer}>
-                        <TouchableOpacity style={style.row} onPress={() => selectedHall.id ? navigation.navigate('TicketDetailScreen', {date: selectedDate, hall: selectedHall, title: movie.title, release: movie.release_date}) : Toast.show(strings.selectSeat)}>
+                        <View style={style.row}>
                             <Text style={style.rowText}>{seat.seat}/</Text>
                             <Text style={style.price}>{seat.row} {strings.rows}</Text>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => {}}>
                                 <Image style={style.closeIcon} source={require('../assets/close.png')} />
                             </TouchableOpacity>
-                        </TouchableOpacity>
+                        </View>
                     </View>
                     <View style={style.buttonContainer}>
-                    <TouchableOpacity style={style.costButton} onPress={() => selectedHall.id ? navigation.navigate('TicketDetailScreen', {date: selectedDate, hall: selectedHall, title: movie.title, release: movie.release_date}) : Toast.show(strings.selectSeat)}>
+                    <View style={style.costButton}>
                         <Text style={style.price}>{strings.price}</Text>
                         <Text style={style.cost}>{prevSeat.seat === 0 ? 50 : prevSeat.seat === 2 ? 150 : 0}{strings.currency}</Text>
-                    </TouchableOpacity>
+                    </View>
                     <TouchableOpacity style={style.payButton} onPress={() => {
                         if(prevSeat.seat != null){
                             Alert.alert(
